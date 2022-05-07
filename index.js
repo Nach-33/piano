@@ -15,10 +15,15 @@ let arrm=['w','e','t','y','u','o','p']
 console.log(document.querySelector('.board').getAttribute('class'))
 document.addEventListener('click',e=>{
     console.log(e.target.getAttribute('id'))
-    console.log(e.target.getAttribute('class'))
-    if(Array.from(e.target.getAttribute('class')=='mp3')) song=`./sounds/${e.target.getAttribute('id')}.wav`
-    else song=`./sounds/${e.target.getAttribute('id')}.wav`
-    document.getElementById("yas").src=song;
+    console.log(Array.from(e.target.getAttribute('class'))[0])
+    if(Array.from(e.target.getAttribute('class'))[0]==='d') {
+        song=`./sounds/${e.target.getAttribute('id')}.mp3`
+        document.getElementById("yas").src=song;
+    }
+    else{
+        song=`./sounds/${e.target.getAttribute('id')}.wav`
+        document.getElementById("yas").src=song;
+    }
 })
 document.addEventListener('keydown',e=>{
     // console.log(e)
